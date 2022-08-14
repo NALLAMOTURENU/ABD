@@ -1,0 +1,202 @@
+POLYMORPHISM:
+Polymorphism is a word derived from 2 greek words "poly" and "morphism". Poly = "many" and morphism = "forms"
+So polymorphism refers to many forms.
+
+Polymorphism are of 2 types:
+1. Compile time polymorphism
+2. Run time polymorphism
+
+1.Compile time polymorphism:
+Method overloading is the best example of this.
+Ex:
+class Sum:
+    def add(self,n1=2,n2=3):
+        print(n1+n2)
+
+ob=Sum()
+ob.add()
+ob.add(4,5)
+
+2. Run time polymorphism:
+Method over riding is the best example for this.
+Ex:
+class Sum:
+    def add(self,n1,n2):
+        self.n1=n1
+        self.n2=n2
+        return n1+n2
+class Addition(Sum):
+    def add(self,n1,n2):
+        self.n1=n1
+        self.n2=n2
+        return n1+n2
+
+ob1=Addition()
+print(ob1.add(2,3))
+ob2=Sum()
+print(ob2.add(4,5))
+
+
+6.ENCAPSULATION:
+Encapsulation is defined as wrapping up of code and data.
+
+7.DATA ABSTRACTION:
+Data abstraction refers to providing essential information to the outside world and hiding the background details.
+In python data hiding can be done by providing __ to an attribute.
+Ex: 
+Class Student:
+  id 
+  name
+  __cgpa  -> hiding this attribute from outer world
+
+Python IDE: 
+IDE -> Integrated Development Enivronment
+Pycharm  -> https://www.jetbrains.com/pycharm/download/
+
+NOTE: Execute all your python programs using pycharm by Monday.
+
+PYHTON MODULE:
+1. Python module is a file containing definitions and statements.
+2. A module can define functions, classes and variables .
+Ex: Creation of simple module
+
+How to import modules?
+We can import functions, classes defined in a module to another module using import statement.
+Syn: 
+      Import module_name
+
+Ex: import calc
+      print(calc.add(10,20))
+
+from import   statement
+This is used to import specific attributes from a module rather than a whole module.
+Syn:  from module_name import specific
+Ex: 
+     from math import rand,pow,sqrt,factorial
+     print(math.sqrt(25))
+     print(math.factorial(9))
+
+NOTE: from math import *  --> same as import math
+
+Sum of the important modules in python are : 
+1.datetime : it provides classes for manipulating dates and time.
+EX: 
+import datetime
+a=datetime.datetime.now( )
+print(a)
+
+2.math: it allows to you perform all mathematical operations.
+Ex:
+import math
+x= min(5,15,10)
+y= max(5,15,10)
+print(x)
+Print(y)
+
+3.re:  which is used to work regualr expressions.
+Regular expressions contains set of functions that allows to search for a string for matching purpose.
+Ex: import re
+      a="in KLU at KLU"
+      b=re.findall("KL",a)
+      print(a)
+
+NOTE: Sum of the functions in re are:
+1.findall()
+2.search()
+3.split()
+4.sub()
+
+PYTHON ARRAYS:
+The array is a collection of elements of similar data type.
+To use array in python we need to import pre-defined module 'array'.
+Syn:  import array  
+You can also import array as any name you want . For example, import array as arr
+Array syntax: array module. array(data_type, value_list) 
+Ex:
+import array
+a=array.array('i',[1,2,3])
+for i in range(0,3):
+    print(a[i])
+
+insert():  it is a function which is used to add elements into the array anywhere we want.
+append(): it is a function which is used to add elements at the end of the array.
+Ex:
+import array
+
+a=array.array('i',[1,2,3])
+for i in range(0,3):
+    print(a[i])
+a.insert(1,4)
+print()
+for i in (a):
+    print(i)
+print()
+a.append(5)
+for i in (a):
+    print(i)
+
+Accessing the element in an array:
+In order to access the array items refer to the index number. Use the index operator [ ] to access an item in a array. The index must be an integer. 
+Ex:
+import array
+a=array.array('i',[1,2,3])
+print(a[1])
+
+Removing an element from the array:
+We use remove() module to remove a particular of our desire. 
+We use pop() module to remove an element from a particular index by passing the index as an argument.
+But pop() usually deletes and returns the last element of the array.
+Ex:
+import array
+
+a=array.array('i',[1,2,3,4,5])
+for i in range(0,5):
+    print(a[i])
+print("The element to be deleted is: ")
+print(a.pop(2))
+for i in range(0,4):
+    print(a[i])
+print("\r")
+a.remove(5)
+for i in range(0,3):
+    print(a[i])
+
+Sliced array:
+There are many ways to print a whole array but if we want to print only a part of the array we use slicing.
+Slice operation is performed on array with the use of colon(:). To print elements from beginning to a range use [:Index], to print elements from end use [:-Index], to print elements from specific Index till the end use [Index:], to print elements within a range, use [Start Index : End Index] and to print whole List with the use of slicing operation, use [:]. Further, to print whole array in reverse order, use [::-1].
+Ex:
+import array
+
+a=array.array('i',[1,2,3,4,5])
+for i in range(0,5):
+    print(a[i])
+sliced_array=a[2:4]
+print(sliced_array)
+slice=a[:3]
+print(slice)
+print(a[::-1])
+
+Searching:
+To search an element in an array we use index(). It returns the index of the given element.
+Ex:
+import array
+
+a=array.array('i',[1,2,3,4,5])
+for i in range(0,5):
+    print(a[i])
+print()
+print(a.index(4))
+
+Updating Elements in a Array:
+In order to update an element in the array we simply reassign a new value to the desired index we want to update. 
+Ex:
+import array
+
+a=array.array('i',[1,2,3,4,5])
+for i in range(0,5):
+    print(a[i],end=" ")
+print()
+a[2] = 6
+print("Array after updation : ", end ="")
+for i in range (0,5):
+    print (a[i], end =" ")
